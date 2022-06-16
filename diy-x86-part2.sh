@@ -165,7 +165,12 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxmin
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
 
 # Add Passwall
-git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 ./package/luci-app-passwall2
+chmod -R 755 ./package/luci-app-passwall2/*
+rm -rf ./package/openwrt-passwall/v2ray-*
+rm -rf ./package/openwrt-passwall/xray-*
+# https://github.com/xiaorouji/openwrt-passwall/tree/luci/luci-app-passwall
 # rm -rf ./package/lean/dns2socks
 # rm -rf ./package/lean/ipt2socks
 # rm -rf ./package/lean/kcptun
@@ -185,9 +190,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 # rm -rf ./feeds/helloworld/tcping
 # rm -rf ./feeds/helloworld/xray-core
 
-
-# Add OpenClash
-git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 
 # Add ADGuardHome
 # git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
@@ -233,6 +235,9 @@ git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-p
 # curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 # chmod -R 755 ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 # chmod -R 755 ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm
+
+# Add OpenClash
+git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 
 # Fix Multi-use on one physical port 
 # 修复 5.4.68-5.4.69内核 于 MIPS 架构 单线复用BUG
